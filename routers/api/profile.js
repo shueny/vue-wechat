@@ -13,4 +13,27 @@ router.get("/test", (req, res) => {
     res.json({msg: "profiles works"})
 })
 
+// $router POST api/profile/add (收前端來的請求)
+// @desc 創建朋友圈訊息接口
+// @access private
+// Postman 測試：先 login 取的 token，再用 token
+router.post("/add", passport.authenticate("jwt", {session: false}), (req, res) => {
+    const profileFields = {};
+    // 測是是否有資料回傳
+    if (req.body.img) profileFields.img = req.body.img;
+    if (req.body.name) profileFields.name = req.body.name;
+    if (req.body.text) profileFields.text = req.body.text;
+
+    // 多張圖片 "img1|img2|img3"
+    if (req.body.imgs) {
+        profileFields.imgs = req.body.imgs.split("|");
+    }
+
+    // 儲存資料
+    new Profile(profileFields).save().then(Profile => {
+        res.json(Profile);
+    })
+})
+
+
 module.exports = router;
