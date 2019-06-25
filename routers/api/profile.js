@@ -35,5 +35,55 @@ router.post("/add", passport.authenticate("jwt", {session: false}), (req, res) =
     })
 })
 
+// $router GET api/profile/latest
+// @desc 下拉刷新接口
+// @access private
+// 前三筆、有其他人發布新訊息時
+router.get("/latest", passport.authenticate("jwt", {session: false}), (req, res) => {
+    Profile.find()
+        .sort({ date: -1 }) // -1 為倒敘的意思
+        .then(profiles => {
+            if (!profiles) {
+                res.status(404).json('沒有任何訊息!');
+            } else {
+                // res.json(profiles); // 取得所有數據
+                // 只取最新的 3 筆資料
+                let newProfiles = [];
+                for( let i = 0; i < 3; i++) {
+                    if(profiles[i] != null) {
+                        newProfiles.push(profiles[i]);
+                    }
+                }
+                res.json(newProfiles);
+            }
+        })
+})
+
+// $router GET api/profile/:page/:size
+// @desc 上拉加載的接口
+// @access private
+// 10條、下拉刷新(請求)3 條、上拉加載(請求)3 條
+// page: 現在的位置 (是在第3條還是第6條)
+// size: 再加載幾條?
+router.get("/:page/:size", passport.authenticate("jwt", {session: false}), (req, res) => {
+    Profile.find()
+        .sort({ date: -1 })
+        .then(profiles => {
+            if(!profiles) {
+                res.status(404).json('沒有任何訊息!');
+            } else {
+                let size = req.params.size;
+                let page = req.params.page;
+                let index = size * (page - 1);
+                let newProfiles = [];
+                for (let i = index; i < size * page; i++) {
+                    if(profiles[i] != null) {
+                        newProfiles.unshift(profiles[i]);
+                    }
+                }
+                res.json(newProfiles);
+            }
+        })
+})
 
 module.exports = router;
