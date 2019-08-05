@@ -7,14 +7,19 @@
         <InputGroup label="帳號" placeholder="請輸入帳號" v-model="user.email"></InputGroup>
         <InputGroup label="密碼" placeholder="請輸入密碼" v-model="user.password" type="password"></InputGroup>
       </form>
+      <div class="btn-wrap">
+        <YButton :disabled="isDisabled" @click="loginCick">登入</YButton>
+      </div>
     </div>
     <div class="footer-wrap">
-      <button class="btn-style01 btn-large register" @click="$router.push('/register')">註冊</button>
+      |
+      <button class="btn-style01 register" @click="$router.push('/register')">註冊</button>|
     </div>
   </div>
 </template>
 <script>
 import InputGroup from "@/components/InputGroup";
+import YButton from "@/components/YButton";
 export default {
   name: "Login",
   data() {
@@ -25,7 +30,23 @@ export default {
       }
     };
   },
-  components: { InputGroup }
+  components: { InputGroup, YButton },
+  computed: {
+    isDisabled() {
+      if (this.user.email && this.user.password) return false;
+      else return true;
+    }
+  },
+  methods: {
+    loginClick() {
+      // 驗證 email
+      var reg = /^([a-zA-Z0-9._-])+@([a-zA-Z0-9._-])+(\.[a-zA-Z0-9._-])+/;
+      if (!reg.test(this.user.email)) {
+        alert("請輸入正確的 email 格式!");
+        return;
+      }
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -54,6 +75,11 @@ export default {
   box-sizing: border-box;
   .register {
     border-radius: $font4;
+  }
+}
+.content {
+  .btn_wrap {
+    margin-top: $font4 * 8 - 2px;
   }
 }
 </style>
