@@ -3,6 +3,10 @@
     <div class="title">登入</div>
     <div class="content">
       <!-- 表單 -->
+      <form action>
+        <InputGroup label="帳號" placeholder="請輸入帳號" v-model="user.email"></InputGroup>
+        <InputGroup label="密碼" placeholder="請輸入密碼" v-model="user.password" type="password"></InputGroup>
+      </form>
     </div>
     <div class="footer-wrap">
       |
@@ -11,9 +15,18 @@
   </div>
 </template>
 <script>
+import InputGroup from "@/components/InputGroup";
 export default {
   name: "Login",
-  components: {}
+  data() {
+    return {
+      user: {
+        email: "",
+        password: ""
+      }
+    };
+  },
+  components: { InputGroup }
 };
 </script>
 <style lang="scss" scoped>

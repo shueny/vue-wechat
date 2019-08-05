@@ -157,3 +157,23 @@ input {
     border: none;
     outline: none;
 }
+
+ ::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: darken($light-grey, 20%);
+    font-family: $font-family;
+    opacity: 1;
+    /* Firefox */
+}
+
+ :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: darken($light-grey, 20%);
+    font-family: $font-family;
+}
+
+ ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: darken($light-grey, 20%);
+    font-family: $font-family;
+}

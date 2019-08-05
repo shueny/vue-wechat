@@ -1,6 +1,6 @@
 <template>
   <div class="input_group">
-    <label for="name">{{ label }}</label>
+    <label :for="name">{{ label }}</label>
     <input
       :type="type"
       :value="value"
@@ -13,7 +13,7 @@
 <script>
 export default {
   name: "input_group",
-  prop: {
+  props: {
     type: {
       type: String,
       default: "text"
@@ -26,6 +26,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "@/assets/scss/base/_variables.scss";
 .input_group {
   width: 100%;
   height: $font4 * 15;
