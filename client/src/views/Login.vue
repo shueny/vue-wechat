@@ -8,7 +8,7 @@
         <InputGroup label="密碼" placeholder="請輸入密碼" v-model="user.password" type="password"></InputGroup>
       </form>
       <div class="btn-wrap">
-        <YButton :disabled="isDisabled" @click="loginCick">登入</YButton>
+        <YButton :disabled="isDisabled" @click="loginClick">登入</YButton>
       </div>
     </div>
     <div class="footer-wrap">
@@ -18,8 +18,8 @@
   </div>
 </template>
 <script>
-import InputGroup from "@/components/InputGroup";
-import YButton from "@/components/YButton";
+import InputGroup from "../components/InputGroup";
+import YButton from "../components/YButton";
 export default {
   name: "Login",
   data() {
@@ -78,7 +78,7 @@ export default {
   }
 }
 .content {
-  .btn_wrap {
+  .btn-wrap {
     margin-top: $font4 * 8 - 2px;
   }
 }

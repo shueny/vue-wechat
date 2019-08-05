@@ -12,13 +12,17 @@
             <InputGroup label="密碼" placeholder="請輸入密碼" v-model="user.password" type="password"></InputGroup>
             <InputGroup label="請確認密碼" placeholder="請確認密碼" v-model="user.password2" type="password"></InputGroup>
           </form>
+          <div class="btn-wrap">
+            <YButton :disabled="isDisabled" @click="registerClick">註冊</YButton>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
-import InputGroup from "@/components/InputGroup";
+import InputGroup from "../components/InputGroup";
+import YButton from "../components/YButton";
 export default {
   name: "Register",
   data() {
@@ -31,7 +35,34 @@ export default {
       }
     };
   },
-  components: { InputGroup }
+  computed: {
+    isDisabled() {
+      if (
+        this.user.name &&
+        this.user.email &&
+        this.user.password &&
+        this.user.password2
+      )
+        return false;
+      else return true;
+    }
+  },
+  components: { InputGroup, YButton },
+  methods: {
+    registerClick() {
+      // 驗證 email
+      var reg = /^([a-zA-Z0-9._-])+@([a-zA-Z0-9._-])+(\.[a-zA-Z0-9._-])+/;
+      if (!reg.test(this.user.email)) {
+        alert("請輸入正確的 email 格式!");
+        return;
+      }
+
+      if (this.user.password !== this.user.password2) {
+        alert("請確認兩次密碼是否相同!");
+        return;
+      }
+    }
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -60,6 +91,11 @@ export default {
     margin-top: $font4 * 20;
     font-size: $font4 * 6;
     text-align: center;
+  }
+}
+.content {
+  .btn-wrap {
+    margin-top: $font4 * 8 - 2px;
   }
 }
 </style>
