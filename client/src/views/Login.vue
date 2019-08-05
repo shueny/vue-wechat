@@ -6,7 +6,7 @@
     </div>
     <div class="footer-wrap">
       |
-      <button class="register" @click="$router.push('/register')">註冊</button>|
+      <button class="btn-style01 register" @click="$router.push('/register')">註冊</button>|
     </div>
   </div>
 </template>
@@ -38,13 +38,6 @@ export default {
   bottom: $font4 * 4;
   text-align: center;
   color: $dark-grey;
-  .register {
-    font-size: $font4 * 4;
-    outline: none;
-    border: none;
-    background-color: transparent;
-    color: $dark-blue;
-  }
 }
 </style>
 
