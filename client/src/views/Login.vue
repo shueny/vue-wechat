@@ -6,7 +6,7 @@
     </div>
     <div class="footer-wrap">
       |
-      <button class="register">註冊</button>|
+      <button class="register" @click="$router.push('/register')">註冊</button>|
     </div>
   </div>
 </template>
@@ -24,6 +24,27 @@ export default {
   overflow: hidden;
   padding: $font4 * 4;
   box-sizing: border-box;
+}
+.title {
+  margin-top: $font4 * 20;
+  font-size: $font4 * 6;
+  text-align: center;
+}
+
+.footer-wrap {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: $font4 * 4;
+  text-align: center;
+  color: $dark-grey;
+  .register {
+    font-size: $font4 * 4;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: $dark-blue;
+  }
 }
 </style>
 
