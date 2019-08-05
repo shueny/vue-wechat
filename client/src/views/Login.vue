@@ -9,8 +9,7 @@
       </form>
     </div>
     <div class="footer-wrap">
-      |
-      <button class="btn-style01 register" @click="$router.push('/register')">註冊</button>|
+      <button class="btn-style01 btn-large register" @click="$router.push('/register')">註冊</button>
     </div>
   </div>
 </template>
@@ -51,6 +50,11 @@ export default {
   bottom: $font4 * 4;
   text-align: center;
   color: $dark-grey;
+  padding: 0 $font4 * 5;
+  box-sizing: border-box;
+  .register {
+    border-radius: $font4;
+  }
 }
 </style>
 

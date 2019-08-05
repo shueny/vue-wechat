@@ -6,15 +6,32 @@
         <div class="title">註冊帳號</div>
         <div class="content">
           <!-- 表單 -->
+          <form action>
+            <InputGroup label="稱號" placeholder="例如：王OO" v-model="user.name"></InputGroup>
+            <InputGroup label="email" placeholder="請輸入 email" v-model="user.email"></InputGroup>
+            <InputGroup label="密碼" placeholder="請輸入密碼" v-model="user.password" type="password"></InputGroup>
+            <InputGroup label="請確認密碼" placeholder="請確認密碼" v-model="user.password2" type="password"></InputGroup>
+          </form>
         </div>
       </div>
     </div>
   </div>
 </template>
 <script>
+import InputGroup from "@/components/InputGroup";
 export default {
   name: "Register",
-  components: {}
+  data() {
+    return {
+      user: {
+        name: "",
+        email: "",
+        password: "",
+        password2: ""
+      }
+    };
+  },
+  components: { InputGroup }
 };
 </script>
 <style lang="scss" scoped>

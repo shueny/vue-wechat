@@ -94,6 +94,14 @@ li {
         border: none;
         background-color: transparent;
         color: $dark-blue;
+        font-family: $font-family;
+    }
+    &-large {
+        width: 100%;
+        height: $font4*11;
+        line-height: $font4*10;
+        background-color: $mango;
+        color: $white;
     }
     &:focus {
         box-shadow: none;
