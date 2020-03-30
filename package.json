@@ -25,6 +25,9 @@
         "vue-router": "^3.0.7"
     },
     "devDependencies": {
-        "concurrently": "^4.1.2"
+        "concurrently": "^4.1.2",
+        "google-fonts-webpack-plugin": "^0.4.4",
+        "node-sass": "^4.13.1",
+        "sass-loader": "^8.0.2"
     }
 }

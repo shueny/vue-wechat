@@ -4,10 +4,14 @@
   </div>
 </template>
 
+<style lang="scss">
+@import "./assets/_main.scss";
+</style>
 <style>
 html,
 body,
 #app {
   width: 100%;
+  height: 100%;
 }
 </style>
