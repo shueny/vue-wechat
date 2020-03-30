@@ -5,4 +5,9 @@
 </template>
 
 <style>
+html,
+body,
+#app {
+  width: 100%;
+}
 </style>
