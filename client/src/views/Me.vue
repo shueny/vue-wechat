@@ -1,12 +1,13 @@
 <template>
   <div class="me">
-    Me
+    <Header title="Me" />
   </div>
 </template>
 <script>
+import Header from "../components/Header.vue";
 export default {
   name: "me",
   props: {},
-  components: {}
+  components: { Header }
 };
 </script>

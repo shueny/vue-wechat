@@ -1,12 +1,13 @@
 <template>
   <div class="discover">
-    Discover
+    <Header title="Discover" />
   </div>
 </template>
 <script>
+import Header from "../components/Header.vue";
 export default {
   name: "discover",
   props: {},
-  components: {}
+  components: { Header }
 };
 </script>
