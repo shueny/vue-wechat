@@ -11,7 +11,9 @@
             />
           </svg>
         </button>
-        <button class="btn-register" @click="$router.push('/register')">Register</button>
+        <button class="btn-register" @click="$router.push('/register')">
+          Register
+        </button>
       </div>
     </div>
 
@@ -19,14 +21,34 @@
       <!-- form -->
       <div class="content">
         <form>
-          <InputGroup label="帳號" placeholder="請輸入帳號" v-model="user.email" />
-          <InputGroup label="密碼" placeholder="請輸入密碼" v-model="user.password" />
+          <InputGroup
+            label="帳號"
+            placeholder="請輸入帳號"
+            v-model="user.email"
+          />
+          <InputGroup
+            label="密碼"
+            placeholder="請輸入密碼"
+            v-model="user.password"
+            :isBtnHide="true"
+            type="password"
+          />
         </form>
         <div class="btn_wrap">
-          <YButton :disabled="isDisabled" @click="loginClick" btn_style="btnStyle1">Login</YButton>
+          <YButton
+            :disabled="isDisabled"
+            @click="loginClick"
+            btn_style="btnStyle1"
+            >Login</YButton
+          >
         </div>
         <div class="btn_wrap2">
-          <YButton :disabled="isDisabled" @click="loginClick" btn_style="btnStyle2">Forget password?</YButton>
+          <YButton
+            :disabled="isDisabled"
+            @click="loginClick"
+            btn_style="btnStyle2"
+            >Forget password?</YButton
+          >
         </div>
       </div>
     </div>

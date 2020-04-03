@@ -49,6 +49,11 @@ const routes = [{
         name: 'register',
         component: () =>
             import ('../views/Register.vue')
+    }, {
+        path: '/moments',
+        name: 'moments',
+        component: () =>
+            import ('../views/Moments.vue')
     }
     // ,
     // {

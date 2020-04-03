@@ -73,7 +73,7 @@ router.post("/login", (req, res) => {
         .then(user => {
             if (!user) {
                 // return res.status(404).json({ email: "用戶不存在"});
-                return res.status(404).json({ email: "用戶不存在" });
+                return res.status(404).json("用戶不存在");
             }
             // 判斷密碼是否正確
             bcrypt.compare(password, user.password)
@@ -94,7 +94,7 @@ router.post("/login", (req, res) => {
                             // res.json({msg: "success"});
                     } else {
                         // return res.status(400).json({password: "密碼錯誤"});
-                        return res.status(400).json({ password: "密碼錯誤" });
+                        return res.status(400).json("密碼錯誤");
                     }
                 })
         })
