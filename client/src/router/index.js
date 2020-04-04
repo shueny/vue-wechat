@@ -54,6 +54,11 @@ const routes = [{
         name: 'moments',
         component: () =>
             import ('../views/Moments.vue')
+    }, {
+        path: '/publish',
+        name: 'publish',
+        component: () =>
+            import ('../views/Publish.vue')
     }
     // ,
     // {

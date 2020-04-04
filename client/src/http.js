@@ -23,7 +23,11 @@ axios.interceptors.response.use(response => {
             // 清除token
             localStorage.removeItem('friendsToken');
             // 畫面跳轉
-            this.$router.push('/login');
+            setTimeout(() => {
+                // this.$router.push("/login");
+                location.reload();
+            }, 300);
+
         } else {
             console.log(error.response)
             alert('ERROR! ' + error.response.data);
