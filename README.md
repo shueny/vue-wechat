@@ -13,7 +13,7 @@
 
 ## 指令
 
-| npm run dev | 啟動專案 |
+- 啟動專案: `npm run dev`
 
 ## 參考設計
 
@@ -23,10 +23,10 @@
 ## 畫面
 
 <div style="display: inline-flex; flex-wrap: wrap;">
-<img src="./client/src/assets/img/login_img.jpg" width="300px" style="margin: 10px 10px 10px 0;">
-<img src="./client/src/assets/img/register_img.jpg" width="300px" style="margin: 10px;">
-<img src="./client/src/assets/img/me_img.jpg" width="300px" style="margin: 10px;">
-<img src="./client/src/assets/img/discover_img.jpg" width="300px" style="margin: 10px;">
-<img src="./client/src/assets/img/friends_img.jpg" width="300px" style="margin: 10px;">
-<img src="./client/src/assets/img/addmessage_img.jpg" width="300px" style="margin: 10px;">
+<img src="./client/src/assets/img/login_img.jpg" width="300px">
+<img src="./client/src/assets/img/register_img.jpg" width="300px">
+<img src="./client/src/assets/img/me_img.jpg" width="300px">
+<img src="./client/src/assets/img/discover_img.jpg" width="300px">
+<img src="./client/src/assets/img/friends_img.jpg" width="300px">
+<img src="./client/src/assets/img/addmessage_img.jpg" width="300px">
 </div>
