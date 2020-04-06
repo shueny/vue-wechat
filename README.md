@@ -2,8 +2,8 @@
 
 學習來源: [VueCli3.x 全栈开发-实现微信朋友圈](https://www.udemy.com/vuecli3forwechat/)
 
-> 後端: MongoDB
-> 前端: Vue.js
+> - 後端: MongoDB
+> - 前端: Vue.js
 
 | Date       | Chapter            |
 | ---------- | ------------------ |
