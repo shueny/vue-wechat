@@ -21,14 +21,10 @@
       <!-- form -->
       <div class="content">
         <form>
+          <InputGroup label="Email" placeholder="" v-model="user.email" />
           <InputGroup
-            label="帳號"
-            placeholder="請輸入帳號"
-            v-model="user.email"
-          />
-          <InputGroup
-            label="密碼"
-            placeholder="請輸入密碼"
+            label="Password"
+            placeholder=""
             v-model="user.password"
             :isBtnHide="true"
             type="password"

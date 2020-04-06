@@ -19,13 +19,28 @@
       <!-- form -->
       <div class="content">
         <form>
-          <InputGroup label="名稱" placeholder="請設定名稱" v-model="user.name" />
-          <InputGroup label="Email" placeholder="請輸入Email" v-model="user.email" />
-          <InputGroup label="密碼" placeholder="請設定密碼" v-model="user.password" type="password" />
-          <InputGroup label="確認密碼" placeholder="請再次輸入密碼" v-model="user.password2" type="password" />
+          <InputGroup label="Username" placeholder="" v-model="user.name" />
+          <InputGroup label="Email" placeholder="" v-model="user.email" />
+          <InputGroup
+            label="Password"
+            placeholder=""
+            v-model="user.password"
+            type="password"
+          />
+          <InputGroup
+            label="Confirm password"
+            placeholder=""
+            v-model="user.password2"
+            type="password"
+          />
         </form>
         <div class="btn_wrap">
-          <YButton :disabled="isDisabled" @click="registerClick" btn_style="btnStyle1">Register</YButton>
+          <YButton
+            :disabled="isDisabled"
+            @click="registerClick"
+            btn_style="btnStyle1"
+            >Register</YButton
+          >
         </div>
       </div>
     </div>
