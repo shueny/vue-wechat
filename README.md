@@ -22,9 +22,11 @@
 
 ## 畫面
 
-<img src="./client/src/assets/img/login_img.jpg" width="200px">
-<img src="./client/src/assets/img/register_img.jpg" width="200px">
-<img src="./client/src/assets/img/me_img.jpg" width="200px">
-<img src="./client/src/assets/img/discover_img.jpg" width="200px">
-<img src="./client/src/assets/img/friends_img.jpg" width="200px">
-<img src="./client/src/assets/img/addmessage_img.jpg" width="200px">
+<div style="display: inline-flex; flex-wrap: wrap;">
+<img src="./client/src/assets/img/login_img.jpg" width="300px" style="margin-right: 10px;">
+<img src="./client/src/assets/img/register_img.jpg" width="300px" style="margin-right: 10px;">
+<img src="./client/src/assets/img/me_img.jpg" width="300px" style="margin-right: 10px;">
+<img src="./client/src/assets/img/discover_img.jpg" width="300px" style="margin-right: 10px;">
+<img src="./client/src/assets/img/friends_img.jpg" width="300px" style="margin-right: 10px;">
+<img src="./client/src/assets/img/addmessage_img.jpg" width="300px" style="margin-right: 10px;">
+</div>
