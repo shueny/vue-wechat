@@ -14,7 +14,8 @@ const db = require("./config/keys").mongoURI;
 
 // 使用 body-parser 中間件(middleware)
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.use(bodyParser.json({ limit: '50mb' })); // nodejs 做爲服務器，在傳輸內容或者上傳文件時，系統默認大小爲100kb，需修改系統限制，改為50mb。
+app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
 // Connect to MongoDB
 mongoose.connect(
@@ -42,7 +43,6 @@ require("./config/passport")(passport);
 // 使用 routers
 app.use("/api/users", users);
 app.use("/api/profiles", profiles);
-
 
 const port = process.env.PORT || 5000;
 

@@ -25,7 +25,7 @@ const ProfileSchema = new Schema({
     },
     date: {
         type: Date,
-        drfault: Date.now
+        default: Date.now
     }
 })
 

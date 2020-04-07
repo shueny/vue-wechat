@@ -30,3 +30,7 @@
 <img src="./client/src/assets/img/friends_img.jpg" width="300px">
 <img src="./client/src/assets/img/addmessage_img.jpg" width="300px">
 </div>
+
+---
+
+## 筆記

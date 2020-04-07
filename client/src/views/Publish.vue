@@ -60,7 +60,7 @@ export default {
       //   console.log(postData);
       //   post
       this.$axios.post("/api/profiles/add", postData).then(res => {
-        console.log(res.status);
+        // console.log(res.status);
         //發布成功後跳轉
         this.$router.push("/moments");
       });

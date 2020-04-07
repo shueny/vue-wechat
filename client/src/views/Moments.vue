@@ -56,8 +56,6 @@ export default {
     // 取得最近幾筆資料
     getLatestData() {
       this.$axios("/api/profiles/latest").then(res => {
-        // console.log("latest");
-        // console.log(res.data);
         this.momentsList = [...res.data];
         // 註冊事件，解決重置問題
         this.$refs.refresh.$emit("refresh");
@@ -70,7 +68,7 @@ export default {
       this.$axios(`/api/profiles/${this.page}/${this.size}`)
         .then(res => {
           // console.log(res.data);
-          const result = [...res.data].reverse();
+          const result = [...res.data];
 
           // 若得到的數據大於0，把結果插入到原本的 momentsList 中
           if (result.length > 0) {

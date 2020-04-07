@@ -13,6 +13,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;
 
+
 new Vue({
     router,
     render: h => h(App)
