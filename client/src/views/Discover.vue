@@ -2,7 +2,12 @@
   <div class="discover">
     <Header title="Discover" />
     <div class="content">
-      <Cell :src="cellData.src" :title="cellData.title" :path="cellData.path" />
+      <Cell
+        :src="cellData.src"
+        :title="cellData.title"
+        :path="cellData.path"
+        class="cell-item"
+      />
     </div>
   </div>
 </template>
@@ -16,8 +21,8 @@ export default {
   data() {
     return {
       cellData: {
-        src: "high-five-solid.svg",
-        title: "friends",
+        src: "users",
+        title: "Friends",
         path: "/moments"
       }
     };
@@ -37,6 +42,13 @@ export default {
     height: calc(100vh - 88px);
     margin-top: $font4 * 11;
     overflow-y: scroll;
+    padding: $font4 * 4;
+    box-sizing: border-box;
+    display: inline-flex;
+    justify-content: space-between;
+    .cell-item {
+      display: inline-flex;
+    }
   }
 }
 </style>

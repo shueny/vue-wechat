@@ -12,10 +12,13 @@
         <!-- <div class="scroll-wrap"> -->
         <div class="head_wrapper">
           <div class="user_head">
-            <span>{{ user.name }}</span>
-            <div class="user_img">
-              <img :src="user.avatar" alt="" class="head_img" />
+            <div
+              class="user_img"
+              :style="{ 'background-image': 'url(' + user.avatar + ')' }"
+            >
+              <!-- <img :src="user.avatar" alt="" class="head_img" /> -->
             </div>
+            <span>{{ user.name }}</span>
           </div>
         </div>
         <div class="content_wrapper">
@@ -107,39 +110,38 @@ export default {
   .head_wrapper {
     width: 100%;
     height: $font4 * 62;
-    position: relative;
-    background: url(../assets/img/user_head_ini_bg.png) no-repeat;
-    background-size: cover;
+    // background: url(../assets/img/user_head_ini_bg.png) no-repeat;
+    // background-size: cover;
   }
 
   .user_head {
     height: $font4 * 62;
     width: 100%;
     // overflow: hidden;
-    // display: inline-flex;
-    // justify-content: flex-end;
-    // align-items: flex-end;
-    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: flex-end;
+    padding-bottom: $font4 * 4;
+    box-sizing: border-box;
 
     span {
+      width: 100%;
       height: $font4 * 10;
       display: flex;
       align-items: center;
-      position: absolute;
-      bottom: -$font4 * 10;
-      right: $font4 * 29;
       color: darken($light-grey, 20%);
+      justify-content: center;
     }
 
     .user_img {
-      width: $font4 * 20;
-      height: $font4 * 20;
+      width: $font4 * 30;
+      height: $font4 * 30;
       border-radius: 50%;
       overflow: hidden;
-      position: absolute;
-      bottom: -$font4 * 10;
-      right: $font4 * 5;
       box-shadow: 0 0px 4px 0px rgba($light-grey, 0.5);
+      background-size: cover;
     }
   }
 

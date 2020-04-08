@@ -4,10 +4,10 @@ import router from './router'
 import axios from './http'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { far } from '@fortawesome/free-regular-svg-icons'
-import { faCommentDots, faAddressBook, faTimes, faUser, faCheck, faEye, faEyeSlash, faPlus, faAngleLeft, faUserPlus, faAngleRight, faCamera } from '@fortawesome/free-solid-svg-icons'
+import { faCommentDots, faAddressBook, faTimes, faUser, faUsers, faCheck, faEye, faEyeSlash, faPlus, faAngleLeft, faUserPlus, faAngleRight, faCamera } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(far, faCommentDots, faAddressBook, faTimes, faCheck, faUser, faEye, faEyeSlash, faPlus, faAngleLeft, faUserPlus, faAngleRight, faCamera);
+library.add(far, faCommentDots, faAddressBook, faTimes, faCheck, faUser, faUsers, faEye, faEyeSlash, faPlus, faAngleLeft, faUserPlus, faAngleRight, faCamera);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;

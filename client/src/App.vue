@@ -13,5 +13,6 @@ body,
 #app {
   width: 100%;
   height: 100%;
+  background: #f8f8f8;
 }
 </style>

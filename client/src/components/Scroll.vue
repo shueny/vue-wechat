@@ -92,8 +92,6 @@ export default {
 
       // 到達底部事件
       this.scroll.on("scrollEnd", () => {
-        console.log("Max: " + this.scroll.maxScrollY);
-
         if (this.scroll.y <= this.scroll.maxScrollY) {
           // 觸發下拉加載事件
           this.$emit("pullup");

@@ -4,8 +4,11 @@
     <div class="container">
       <div class="cell_wrapper">
         <div class="cell_title" v-if="user">
-          <div class="user_avatar">
-            <img :src="user.avatar" alt="" />
+          <div
+            class="user_avatar"
+            :style="{ 'background-image': 'url(' + user.avatar + ')' }"
+          >
+            <!-- <img :src="user.avatar" alt="" /> -->
           </div>
           <span>{{ user.name }}</span>
         </div>
@@ -64,6 +67,7 @@ export default {
       height: $font4 * 30;
       border-radius: 50%;
       overflow: hidden;
+      background-size: cover;
     }
 
     span {

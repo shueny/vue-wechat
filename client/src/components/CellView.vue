@@ -1,18 +1,28 @@
 <template>
   <div class="cell_view">
-    <div class="img_wrapper">
-      <img :src="momentObj.img" alt="" />
-    </div>
-    <div class="content_wrapper">
+    <div class="title_wrapper">
+      <div
+        class="img_wrapper"
+        :style="{ 'background-image': 'url(' + momentObj.img + ')' }"
+      >
+        <img :src="momentObj.img" alt="" />
+      </div>
       <div class="cell_name">
         {{ momentObj.name }}
       </div>
       <div class="cell_text" v-if="momentObj.text">
         {{ momentObj.text }}
       </div>
+    </div>
+    <div class="content_wrapper">
       <div class="cell_imgs" v-if="momentObj.imgs.length > 0">
-        <div class="cell_img" v-for="(item, index) in momentObj.imgs">
-          <img :key="index" :src="item" alt="" />
+        <div
+          class="cell_img"
+          v-for="(item, index) in momentObj.imgs"
+          :style="{ 'background-image': 'url(' + item + ')' }"
+          :key="index"
+        >
+          <!-- <img :key="index" :src="item" alt="" /> -->
         </div>
       </div>
     </div>
@@ -68,17 +78,47 @@ export default {
     }
   }
 
-  .img_wrapper {
-    width: $font4 * 12;
-    height: $font4 * 12;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    border-radius: $font4 * 3;
-    margin-right: $font4 * 3;
+  .title_wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: $font4 * 12 auto;
+    grid-template-rows: $font4 * 6 auto;
+    grid-column-gap: $font4 * 2;
+    margin-bottom: $font4 * 2;
+
+    .img_wrapper {
+      width: $font4 * 12;
+      height: $font4 * 12;
+      overflow: hidden;
+      border-radius: $font4 * 3;
+      grid-column: 1/2;
+      grid-row: 1/3;
+      background-size: cover;
+      background-repeat: no-repeat;
+
+      img {
+        vertical-align: top;
+        opacity: 0;
+      }
+    }
+    .cell_name {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      font-size: $font4 * 4;
+      line-height: $font4 * 6;
+    }
+
+    .cell_text {
+      grid-column: 2/3;
+      grid-row: 2/3;
+      color: $light-grey;
+      font-size: $font4 * 3;
+      line-height: $font4 * 4;
+    }
   }
+
   .content_wrapper {
-    width: calc(100% - 60px);
+    width: 100%;
     box-sizing: border-box;
 
     .cell_name {
@@ -101,9 +141,12 @@ export default {
       flex-wrap: wrap;
 
       .cell_img {
-        width: calc(100% / 3 - 4px);
+        width: calc((100vw - 32px) / 3 - 4px);
+        height: calc((100vw - 32px) / 3 - 4px);
         margin-right: $font4;
         margin-bottom: $font4 * 2;
+        border-radius: $font4 * 3;
+        background-size: cover;
 
         img {
           border-radius: $font4 * 3;
