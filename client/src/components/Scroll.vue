@@ -46,7 +46,7 @@ export default {
       dragTip: {
         text: "Update",
         showLoading: false,
-        showLoadMore: false
+        showLoadMore: true
       },
       isDone: false
     };
@@ -79,7 +79,6 @@ export default {
 
       //   手鬆開事件
       this.scroll.on("touchEnd", pos => {
-        console.log(pos.y);
         if (pos.y > 50) {
           this.dragTip.text = " Loading...";
           // 重新初始化
@@ -129,17 +128,20 @@ export default {
   }
 
   .clear {
+    height: $font4 * 11;
+    // position: initial;
+    bottom: 0;
+    top: auto;
     // height: $font4 * 11;
     display: inline-flex;
     justify-content: flex-start;
     align-items: center;
     color: $green;
     width: 100vw;
-    height: 100%;
-    background: rgba($white, 0.7);
-    position: fixed;
-    top: 0;
-    left: 0;
+    // height: 100%;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
     z-index: 2;
 
     .display {
@@ -167,12 +169,17 @@ export default {
     align-items: center;
     margin-top: $font4 * 5;
     padding: $font4 * 2 0;
-    border-top: 1px solid rgba(191, 191, 191, 0.2);
+    // border-top: 1px solid rgba(191, 191, 191, 0.2);
+
     .clear {
       height: $font4 * 11;
       position: initial;
       bottom: 0;
       top: auto;
+
+      .display {
+        position: initial;
+      }
     }
 
     .list-donetip {

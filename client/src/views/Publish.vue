@@ -2,7 +2,7 @@
   <div class="publish">
     <!-- <Header btn_icon="plus" btn_icon_type="fas" /> -->
     <div class="header">
-      <button @click="$router.go(-1)">
+      <button @click="$router.push('/momonets')">
         <font-awesome-icon icon="times" />
       </button>
       <button class="btn-publish" @click="publish">
@@ -19,25 +19,28 @@
           v-model="text"
           placeholder="Write something here..."
         ></textarea>
-        <Upload @getImgs="getImgs" />
+        <Upload @getImgs="getImgs" :isLoading="isLoading" />
       </div>
     </div>
+    <Loading :isLoading="isLoading" />
   </div>
 </template>
 <script>
 // import Header from "../components/Header.vue";
 import jwt_decode from "jwt-decode";
 import Upload from "../components/Upload.vue";
+import Loading from "../components/Loading.vue";
 export default {
   name: "publish",
   props: {},
   data() {
     return {
       text: "",
-      imgs: []
+      imgs: [],
+      isLoading: false
     };
   },
-  components: { Upload },
+  components: { Upload, Loading },
   computed: {
     user() {
       const token = localStorage.friendsToken;
@@ -49,6 +52,7 @@ export default {
   },
   methods: {
     publish() {
+      this.isLoading = true;
       // 發布
       //   console.log(this.imgs);
       const postData = {
@@ -61,6 +65,7 @@ export default {
       //   post
       this.$axios.post("/api/profiles/add", postData).then(res => {
         // console.log(res.status);
+        this.isLoading = false;
         //發布成功後跳轉
         this.$router.push("/moments");
       });

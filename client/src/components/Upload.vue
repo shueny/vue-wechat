@@ -7,7 +7,11 @@
       v-if="showFileData.length > 0"
     >
       <img :src="file_img" alt="" />
-      <button class="btn_remove" @click="removeImg(file_img)">
+      <button
+        class="btn_remove"
+        @click="removeImg(file_img)"
+        v-show="!isLoading"
+      >
         <font-awesome-icon icon="times" />
       </button>
     </div>
@@ -32,7 +36,11 @@ export default {
   props: {
     path: String,
     src: String,
-    title: String
+    title: String,
+    isLoading: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {

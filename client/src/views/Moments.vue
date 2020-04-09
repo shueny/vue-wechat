@@ -44,7 +44,7 @@ export default {
   props: {},
   components: { Header, CellView, Scroll },
   data() {
-    return { momentsList: [], page: 2, size: 3 };
+    return { momentsList: [], page: 2, size: 3, isLoading: false };
   },
   computed: {
     user() {
@@ -58,19 +58,26 @@ export default {
   methods: {
     // 取得最近幾筆資料
     getLatestData() {
+      if (this.isLoading) return;
+      this.isLoading = true;
       this.$axios("/api/profiles/latest").then(res => {
+        this.isLoading = false;
         this.momentsList = [...res.data];
         // 註冊事件，解決重置問題
         this.$refs.refresh.$emit("refresh");
       });
     },
     loadData() {
+      this.page = 2;
       this.getLatestData();
     },
     loadMoreData() {
+      if (this.isLoading) return;
+      this.isLoading = true;
       this.$axios(`/api/profiles/${this.page}/${this.size}`)
         .then(res => {
           // console.log(res.data);
+          this.isLoading = false;
           const result = [...res.data];
 
           // 若得到的數據大於0，把結果插入到原本的 momentsList 中
@@ -81,7 +88,7 @@ export default {
             this.page++;
           } else {
             // 沒有更多數據
-            console.log("done");
+            // console.log("done");
             this.$refs.refresh.$emit("loadedDone");
           }
         })
