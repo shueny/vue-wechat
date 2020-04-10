@@ -23,10 +23,10 @@
 ## 畫面
 
 <div style="display: inline-flex; flex-wrap: wrap; justify-content: center;">
-<img src="./client/src/assets/img/Samsung Galaxy S9 Mockup.jpg" width="600px">
-<img src="./client/src/assets/img/Samsung Galaxy S9 Mockup – 1.jpg" width="600px">
-<img src="./client/src/assets/img/Samsung Galaxy S9 Mockup – 2.jpg" width="600px">
-<img src="./client/src/assets/img/Samsung Galaxy S9 Mockup – 3.jpg" width="600px">
+<img src="./gh-pages/src/assets/img/Samsung Galaxy S9 Mockup.jpg" width="600px">
+<img src="./gh-pages/src/assets/img/Samsung Galaxy S9 Mockup – 1.jpg" width="600px">
+<img src="./gh-pages/src/assets/img/Samsung Galaxy S9 Mockup – 2.jpg" width="600px">
+<img src="./gh-pages/src/assets/img/Samsung Galaxy S9 Mockup – 3.jpg" width="600px">
 </div>
 
 ---

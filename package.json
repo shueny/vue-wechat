@@ -4,11 +4,11 @@
     "description": "restful api",
     "main": "server.js",
     "scripts": {
-        "client-install": "npm install --prefix client",
-        "client": "npm start --prefix client",
+        "client-install": "npm install --prefix gh-pages",
+        "gh-pages": "npm start --prefix gh-pages",
         "start": "node server.js",
         "server": "nodemon server.js",
-        "dev": "concurrently \"npm run server\" \"npm run client\""
+        "dev": "concurrently \"npm run server\" \"npm run gh-pages\""
     },
     "author": "Shueny",
     "license": "ISC",
